@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Error404Component } from './error404.component';
 import { Error404RoutingModule } from './error404.routing';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { Error404RoutingModule } from './error404.routing';
   ],
   imports: [
     CommonModule,
-    Error404RoutingModule
+    Error404RoutingModule,
+    TranslateModule,
   ],
   exports: [
     Error404Component
