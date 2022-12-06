@@ -1,19 +1,19 @@
-<form class="search-container" role="form" [formGroup]="form">
+<form [formGroup]="form" class="search-container" autocomplete="off">
   <mat-form-field appearance="outline">
-    <mat-label>{{'Name'}}</mat-label>
-    <input matInput formControlName="name" [placeholder]="'LEAD.FORM.AGENCY.TELEPHONE'">
+    <mat-label>{{ 'FILTER.NAME' | translate }}</mat-label>
+    <input matInput formControlName="name" [placeholder]="'FILTER.NAME' | translate">
   </mat-form-field>
   <mat-form-field appearance="outline">
-    <mat-label>{{'Status'}}</mat-label>
+    <mat-label>{{ 'FILTER.STATUS' | translate }}</mat-label>
     <mat-select disableRipple formControlName="status">
-      <mat-option [value]="''">{{ 'Selecione' }}</mat-option>
+      <mat-option [value]="''">{{ 'COMMON.SELECT_OPTION' | translate }}</mat-option>
       <mat-option *ngFor="let status of STATUSES" [value]="status">{{ status }}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="outline">
-    <mat-label>{{'Gender'}}</mat-label>
+    <mat-label>{{ 'FILTER.GENDER' | translate }}</mat-label>
     <mat-select disableRipple formControlName="gender">
-      <mat-option [value]="''">{{ 'Selecione' }}</mat-option>
+      <mat-option [value]="''">{{ 'COMMON.SELECT_OPTION' | translate }}</mat-option>
       <mat-option *ngFor="let gender of GENDERS" [value]="gender">{{ gender }}</mat-option>
     </mat-select>
   </mat-form-field>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header.component';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     MatButtonModule,
     MatMenuModule,
+    TranslateModule,
   ],
   exports: [
     HeaderComponent

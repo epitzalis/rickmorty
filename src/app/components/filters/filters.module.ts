@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select'
 import { MatButtonModule } from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    TranslateModule,
   ],
   exports: [
     FiltersComponent

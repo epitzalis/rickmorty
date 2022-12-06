@@ -1,0 +1,18 @@
+{
+  "HEADER": {
+    "TITLE": "Technical test Rick & Morty"
+  },
+  "FILTER": {
+    "NAME": "Name",
+    "STATUS": "Status",
+    "GENDER": "Gender"
+  },
+  "CARD": {
+    "KNOW_LOCATION": "Last known location",
+    "FIRST_SEE": "First seen in"
+  },
+  "COMMON": {
+    "NO_DATA": "No data available",
+    "SELECT_OPTION": "Select"
+  }
+}

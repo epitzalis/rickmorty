@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home.routing';
 import { FiltersModule } from '@components/filters/filters.module';
 import { CardModule } from '@components/card/card.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { CardModule } from '@components/card/card.module';
     CommonModule,
     HomeRoutingModule,
     FiltersModule,
-    CardModule
+    CardModule,
+    TranslateModule,
   ],
   exports: [
     HomeComponent

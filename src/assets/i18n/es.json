@@ -1,0 +1,18 @@
+{
+  "HEADER": {
+    "TITLE": "Prueba técnica Rick & Morty"
+  },
+  "FILTER": {
+    "NAME": "Nombre",
+    "STATUS": "Estado",
+    "GENDER": "Género"
+  },
+  "CARD": {
+    "KNOW_LOCATION": "Última ubicación conocida",
+    "FIRST_SEE": "Visto por primera vez en"
+  },
+  "COMMON": {
+    "NO_DATA": "No hay datos disponibles",
+    "SELECT_OPTION": "Selecciona"
+  }
+}

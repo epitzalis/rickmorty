@@ -6,10 +6,10 @@
     <h2>{{ character.name }}</h2>
     <h3>{{ character.status }} - {{ character.species }}</h3>
     <div class="card__content__location">
-      <span class="color-gray">Last known location:</span>
+      <span class="color-gray">{{ 'CARD.KNOW_LOCATION' | translate }}:</span>
       <h3>{{ character.location.name }}</h3>
     </div>
-    <span class="color-gray">First seen in:</span>
+    <span class="color-gray">{{ 'CARD.FIRST_SEE' | translate }}:</span>
     <h3>{{ character.lastEpisodeName }}</h3>
   </div>
 </div>
