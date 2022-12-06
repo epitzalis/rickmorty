@@ -1,1 +1,8 @@
-<p>home works!</p>
+<app-filters></app-filters>
+<div *ngIf="characters?.length; else NoData" class="card-grid">
+  <app-card [character]="character" *ngFor="let character of characters"></app-card>
+</div>
+
+<ng-template #NoData>
+  <h2>No hay datos</h2>
+</ng-template>

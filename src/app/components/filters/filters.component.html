@@ -1,1 +1,20 @@
-<p>filters works!</p>
+<form class="search-container" role="form" [formGroup]="form">
+  <mat-form-field>
+    <mat-label>{{'Name'}}</mat-label>
+    <input matInput formControlName="name" [placeholder]="'LEAD.FORM.AGENCY.TELEPHONE'">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{'Status'}}</mat-label>
+    <mat-select disableRipple formControlName="status">
+      <mat-option [value]="''">{{ 'Selecione' }}</mat-option>
+      <mat-option *ngFor="let status of STATUSES" [value]="status">{{ status }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{'Gender'}}</mat-label>
+    <mat-select disableRipple formControlName="gender">
+      <mat-option [value]="''">{{ 'Selecione' }}</mat-option>
+      <mat-option *ngFor="let gender of GENDERS" [value]="gender">{{ gender }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

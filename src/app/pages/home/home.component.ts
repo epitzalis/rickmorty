@@ -1,10 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CharacterSearch } from '@models/character-search.model';
+import { RickMortyApiService } from '@services/rick-morty-api.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  public characters: any[]
+
+  constructor(
+    private readonly rickMortyApiService: RickMortyApiService,
+    private readonly activateRoute: ActivatedRoute,
+  ) {}
+
+  ngOnInit(): void {
+    this.activateRoute.queryParams.subscribe((resp: CharacterSearch) => {
+      this.findCharacters(resp)
+    })
+  }
+
+  private findCharacters(params: CharacterSearch): void {
+    this.rickMortyApiService.findCharacters(params).subscribe(
+      {
+        next: resp => {
+          this.characters = resp
+        },
+        error: () => {
+          this.characters = []
+        }
+      }
+    )
+  }
 
 }
