@@ -13,15 +13,15 @@ import { debounceTime, Subscription } from 'rxjs';
 })
 export class FiltersComponent implements OnInit, OnDestroy {
 
-  public form: FormGroup
+  public form: FormGroup;
 
-  public readonly GENDERS: string[] = Object.values(Genders)
+  public readonly GENDERS: string[] = Object.values(Genders);
 
-  public readonly STATUSES: string[] = Object.values(Statuses)
+  public readonly STATUSES: string[] = Object.values(Statuses);
 
-  private valueChangesSubscription: Subscription
+  private valueChangesSubscription: Subscription;
 
-  private readonly DEBOUNCE_TIME = 1000
+  private readonly DEBOUNCE_TIME = 1000;
 
   constructor(
     private readonly formBuilder: FormBuilder,
@@ -30,12 +30,12 @@ export class FiltersComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.initForm()
-    this.subscribeFormChanges()
+    this.initForm();
+    this.subscribeFormChanges();
   }
 
   ngOnDestroy(): void {
-    this.valueChangesSubscription.unsubscribe()
+    this.valueChangesSubscription.unsubscribe();
   }
 
 
@@ -45,21 +45,21 @@ export class FiltersComponent implements OnInit, OnDestroy {
       name: [queryParams?.name ?? ''],
       status: [queryParams?.status ?? ''],
       gender: [queryParams?.gender ?? ''],
-    })
+    });
   }
 
   private subscribeFormChanges(): void {
     this.valueChangesSubscription = this.form.valueChanges.pipe(
       debounceTime(this.DEBOUNCE_TIME),
     ).subscribe(() => {
-      this.filter()
-    })
+      this.filter();
+    });
   }
 
   private filter(): void {
     const queryParams = Object.entries(this.form.value)
         .reduce((acc, [prev, current]) => (!current ? acc : (acc[prev] = current, acc)), {});
-    this.router.navigate([''], { queryParams })
+    this.router.navigate([''], { queryParams });
   }
 
 }

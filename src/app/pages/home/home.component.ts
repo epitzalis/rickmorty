@@ -31,11 +31,11 @@ export class HomeComponent implements OnInit {
     this.rickMortyApiService.findCharacters(params).subscribe(
       {
         next: resp => {
-          this.characters = resp
+          this.characters = resp;
           this.isLoading = false;
         },
         error: () => {
-          this.characters = []
+          this.characters = [];
           this.isLoading = false;
         }
       }

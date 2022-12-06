@@ -28,34 +28,34 @@ export class RickMortyApiService {
     return this.httpClient.get<{ results: Character[] }>(`${this.URL}/character`, { params })
       .pipe(
         switchMap(resp => {
-          const characters = resp.results.slice(0, this.NUMBER_CHARACTERS)
+          const characters = resp.results?.slice(0, this.NUMBER_CHARACTERS) ?? []
           return forkJoin(this.getEpisodesRequest(characters)).pipe(
             map((episodes: Episode[]) => {
-              return this.unifyCharacters(characters, episodes)
+              return this.unifyCharacters(characters, episodes);
             })
           )
         })
-      )
+      );
   }
 
   private findEpisode(episode: string): Observable<Episode> {
-    return this.httpClient.get<Episode>(`${this.URL}/episode/${episode}`)
+    return this.httpClient.get<Episode>(`${this.URL}/episode/${episode}`);
   }
 
   private getEpisodesRequest(characters: Character[]): Observable<Episode>[] {
     return characters.map((character: Character) => {
-      const lastEpisodeId = character.episode.at(-1)?.split("/")?.pop()
-      return this.findEpisode(lastEpisodeId)
-    })
+      const lastEpisodeId = character.episode.at(-1)?.split("/")?.pop();
+      return this.findEpisode(lastEpisodeId);
+    });
   }
 
   private unifyCharacters(characters: Character[], episodes: Episode[]): Character[] {
     return characters.map((item: Character, index: number) => {
       return {
         ...item,
-        lastEpisodeName: episodes.at(index)?.name
+        lastEpisodeName: episodes.at(index)?.name,
       }
-    })
+    });
   }
 
 }

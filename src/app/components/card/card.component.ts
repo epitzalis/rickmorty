@@ -7,5 +7,5 @@ import { Character } from '@models/character.model';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input() public character: Character
+  @Input() public character: Character;
 }

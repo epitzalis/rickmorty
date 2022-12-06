@@ -5,5 +5,5 @@ export interface Character {
   image: string;
   location: { name: string }
   episode: string[];
-  lastEpisodeName: string;
+  lastEpisodeName?: string;
 }

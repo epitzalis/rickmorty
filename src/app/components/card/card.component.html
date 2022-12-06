@@ -1,14 +1,14 @@
-<div class="card">
+<div class="card" *ngIf="character">
   <div class="card__image">
     <img [src]="character.image" [alt]="character.name">
   </div>
   <div class="card__content">
     <h2>{{ character.name }}</h2>
     <div class="card__content__status">
-      <div class="card__content__status--icon" [ngClass]="{
-          'alive': (character.status | uppercase) === 'ALIVE',
-          'dead': (character.status | uppercase)  === 'DEAD',
-          'unknown': (character.status | uppercase)  === 'UNKNOWN'
+      <div class="card__content__status--icon" *ngIf="character.status | uppercase as status" [ngClass]="{
+          'alive': status === 'ALIVE',
+          'dead': status  === 'DEAD',
+          'unknown': status  === 'UNKNOWN'
         }"></div>
       <h3>
         {{ ('FIELD_STATUS.' + character.status | uppercase) | translate }} - {{ character.species }}

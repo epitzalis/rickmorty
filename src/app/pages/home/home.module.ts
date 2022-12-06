@@ -20,7 +20,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatProgressSpinnerModule,
   ],
   exports: [
-    HomeComponent
+    HomeComponent,
   ]
 })
 export class HomeModule { }
