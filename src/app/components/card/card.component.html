@@ -4,7 +4,16 @@
   </div>
   <div class="card__content">
     <h2>{{ character.name }}</h2>
-    <h3>{{ character.status }} - {{ character.species }}</h3>
+    <div class="card__content__status">
+      <div class="card__content__status--icon" [ngClass]="{
+          'alive': (character.status | uppercase) === 'ALIVE',
+          'dead': (character.status | uppercase)  === 'DEAD',
+          'unknown': (character.status | uppercase)  === 'UNKNOWN'
+        }"></div>
+      <h3>
+        {{ ('FIELD_STATUS.' + character.status | uppercase) | translate }} - {{ character.species }}
+      </h3>
+    </div>
     <div class="card__content__location">
       <span class="color-gray">{{ 'CARD.KNOW_LOCATION' | translate }}:</span>
       <h3>{{ character.location.name }}</h3>

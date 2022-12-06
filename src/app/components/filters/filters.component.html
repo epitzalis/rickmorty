@@ -7,14 +7,18 @@
     <mat-label>{{ 'FILTER.STATUS' | translate }}</mat-label>
     <mat-select disableRipple formControlName="status">
       <mat-option [value]="''">{{ 'COMMON.SELECT_OPTION' | translate }}</mat-option>
-      <mat-option *ngFor="let status of STATUSES" [value]="status">{{ status }}</mat-option>
+      <mat-option *ngFor="let status of STATUSES" [value]="status">
+        {{ ('FIELD_STATUS.' + status | uppercase) | translate }}
+      </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>{{ 'FILTER.GENDER' | translate }}</mat-label>
     <mat-select disableRipple formControlName="gender">
       <mat-option [value]="''">{{ 'COMMON.SELECT_OPTION' | translate }}</mat-option>
-      <mat-option *ngFor="let gender of GENDERS" [value]="gender">{{ gender }}</mat-option>
+      <mat-option *ngFor="let gender of GENDERS" [value]="gender">
+        {{ ('FIELD_GENDER.' + gender | uppercase) | translate }}
+      </mat-option>
     </mat-select>
   </mat-form-field>
 </form>

@@ -4,13 +4,24 @@
   },
   "FILTER": {
     "NAME": "Nombre",
-    "STATUS": "Estado",
-    "GENDER": "Género"
+    "GENDER": "Género",
+    "STATUS": "Estado"
   },
   "CARD": {
     "KNOW_LOCATION": "Última ubicación conocida",
     "FIRST_SEE": "Visto por primera vez en",
     "NAV_HOME": "Volver a home"
+  },
+  "FIELD_STATUS": {
+    "ALIVE": "Vivo",
+    "DEAD": "Muerto",
+    "UNKNOWN": "Desconocido"
+  },
+  "FIELD_GENDER": {
+    "FEMALE": "Femenino",
+    "MALE": "Masculino",
+    "GENDERLESS": "Sin género",
+    "UNKNOWN": "Desconocido"
   },
   "ERROR": {
     "PAGE_NOT_EXIST": "No existe la página solicitada"

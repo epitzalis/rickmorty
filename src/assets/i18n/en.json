@@ -3,13 +3,24 @@
     "TITLE": "Technical test Rick & Morty"
   },
   "FILTER": {
-    "NAME": "Name",
-    "STATUS": "Status",
-    "GENDER": "Gender"
+    "NAME": "Nombre",
+    "GENDER": "Género",
+    "STATUS": "Estado"
   },
   "CARD": {
     "KNOW_LOCATION": "Last known location",
     "FIRST_SEE": "First seen in"
+  },
+  "FIELD_GENDER": {
+    "FEMALE": "Female",
+    "MALE": "Male",
+    "GENDERLESS": "Genderless",
+    "UNKNOWN": "Unknown"
+  },
+  "FIELD_STATUS": {
+    "ALIVE": "Alive",
+    "DEAD": "Dead",
+    "UNKNOWN": "Unknown"
   },
   "ERROR": {
     "PAGE_NOT_EXIST": "The requested page does not exist"

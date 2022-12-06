@@ -1,10 +1,16 @@
 <app-filters></app-filters>
 
-<div *ngIf="characters?.length; else NoData" class="card-grid">
-  <app-card [character]="character" *ngFor="let character of characters"></app-card>
+<div *ngIf="isLoading; else showData" class="loader">
+  <mat-spinner></mat-spinner>
 </div>
 
-<ng-template #NoData>
+<ng-template #showData>
+  <div *ngIf="characters?.length; else noData" class="card-grid">
+    <app-card [character]="character" *ngFor="let character of characters"></app-card>
+  </div>
+</ng-template>
+
+<ng-template #noData>
   <div class="no-data">
     <h2>{{ 'COMMON.NO_DATA' | translate }}</h2>
   </div>
